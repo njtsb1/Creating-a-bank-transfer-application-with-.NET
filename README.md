@@ -1,10 +1,10 @@
-# Digital Innovation One - Prática .NET
+# Digital Innovation One - Practice .NET
 
-## POO na prática: criando uma aplicação
+## OOP in practice: Creating a bank transfer application with .NET
 
 [Slides](dio-dotnet-poo-lab-1.pdf)
 
-## Contato
+## Contact
 
 Nivaldo Beirão
 
