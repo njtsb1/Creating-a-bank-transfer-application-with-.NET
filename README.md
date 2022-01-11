@@ -1,8 +1,6 @@
-# Digital Innovation One - Practice .NET
+# Practice .NET
 
 ## OOP in practice: Creating a bank transfer application with .NET
-
-[Slides](dio-dotnet-poo-lab-1.pdf)
 
 ## Contact
 
