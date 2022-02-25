@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "/home/eliezer/.nuget/packages/": {},
+    "/home/nbeirao/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/eliezer/sandbox/dio/DIO.Bank/DIO.Bank.csproj",
+      "projectUniqueName": "/home/nbeirao/sandbox/dio/DIO.Bank/DIO.Bank.csproj",
       "projectName": "DIO.Bank",
-      "projectPath": "/home/eliezer/sandbox/dio/DIO.Bank/DIO.Bank.csproj",
-      "packagesPath": "/home/eliezer/.nuget/packages/",
-      "outputPath": "/home/eliezer/sandbox/dio/DIO.Bank/obj/",
+      "projectPath": "/home/nbeirao/sandbox/dio/DIO.Bank/DIO.Bank.csproj",
+      "packagesPath": "/home/nbeirao/.nuget/packages/",
+      "outputPath": "/home/nbeirao/sandbox/dio/DIO.Bank/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/eliezer/.nuget/NuGet/NuGet.Config"
+        "/home/nbeirao/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
