@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hed Bank - Simulation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+  <header class="topbar">
+    <div class="brand">
+      <h1 id="app-title">Hed Bank</h1>
+      <small id="app-subtitle">Simulated transfers</small>
+    </div>
+
+    <div class="controls">
+      <div class="lang-switch">
+        <label for="lang-select" class="visually-hidden" id="lang-label">Language</label>
+        <select id="lang-select" aria-labelledby="lang-label">
+          <option value="en">EN-US</option>
+          <option value="pt">PT-BR</option>
+          <option value="es">ES-ES</option>
+        </select>
+      </div>
+
+      <button id="theme-toggle" class="icon-btn" aria-pressed="true" title="Toggle theme">
+        <!-- Moon icon (dark) and Sun icon (light) are toggled by CSS/JS -->
+        <svg id="icon-moon" class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <svg id="icon-sun" class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 5.84l1.79 1.8 1.8-1.8zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm7.03-2.03l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM17 13h3v-2h-3v2zM12 7a5 5 0 100 10 5 5 0 000-10zM6.76 19.16l-1.8 1.79L3.17 18.16l1.79-1.8 1.8 1.8zM20.83 5.84l-1.79-1.79-1.8 1.8 1.8 1.79 1.79-1.8z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel" aria-labelledby="accounts-title">
+      <div class="panel-header">
+        <h2 id="accounts-title">Accounts</h2>
+        <div class="panel-actions">
+          <button id="btn-list" class="btn primary" data-i18n="listAccounts">List accounts</button>
+          <button id="btn-new" class="btn" data-i18n="insertAccount">Insert new account</button>
+        </div>
+      </div>
+
+      <div id="accounts-list" class="accounts-list" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title" data-i18n="operations">Operations</h2>
+
+      <form id="form-create" class="form hidden" aria-hidden="true">
+        <h3 data-i18n="insertAccount">Insert new account</h3>
+
+        <label>
+          <span data-i18n="accountType">Account type</span>
+          <select id="input-type">
+            <option value="0" data-i18n="physical">Physical</option>
+            <option value="1" data-i18n="legal">Legal</option>
+          </select>
+        </label>
+
+        <label>
+          <span data-i18n="customerName">Customer name</span>
+          <input id="input-name" type="text" required />
+        </label>
+
+        <label>
+          <span data-i18n="openingBalance">Opening balance</span>
+          <input id="input-balance" type="number" step="0.01" value="0" />
+        </label>
+
+        <label>
+          <span data-i18n="credit">Credit</span>
+          <input id="input-credit" type="number" step="0.01" value="0" />
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="create-account" class="btn primary" data-i18n="create">Create</button>
+          <button type="button" id="cancel-create" class="btn" data-i18n="cancel">Cancel</button>
+        </div>
+      </form>
+
+      <form id="form-transfer" class="form">
+        <h3 data-i18n="transfer">Transfer</h3>
+
+        <label>
+          <span data-i18n="fromAccount">From account index</span>
+          <input id="transfer-from" type="number" min="0" />
+        </label>
+
+        <label>
+          <span data-i18n="toAccount">To account index</span>
+          <input id="transfer-to" type="number" min="0" />
+        </label>
+
+        <label>
+          <span data-i18n="amount">Amount</span>
+          <input id="transfer-amount" type="number" step="0.01" />
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="do-transfer" class="btn primary" data-i18n="transfer">Transfer</button>
+        </div>
+      </form>
+
+      <form id="form-withdraw" class="form">
+        <h3 data-i18n="withdraw">Withdraw</h3>
+
+        <label>
+          <span data-i18n="accountNumber">Account index</span>
+          <input id="withdraw-index" type="number" min="0" />
+        </label>
+
+        <label>
+          <span data-i18n="amount">Amount</span>
+          <input id="withdraw-amount" type="number" step="0.01" />
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="do-withdraw" class="btn primary" data-i18n="withdraw">Withdraw</button>
+        </div>
+      </form>
+
+      <form id="form-deposit" class="form">
+        <h3 data-i18n="deposit">Deposit</h3>
+
+        <label>
+          <span data-i18n="accountNumber">Account index</span>
+          <input id="deposit-index" type="number" min="0" />
+        </label>
+
+        <label>
+          <span data-i18n="amount">Amount</span>
+          <input id="deposit-amount" type="number" step="0.01" />
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="do-deposit" class="btn primary" data-i18n="deposit">Deposit</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small id="footer-text">© Hed Bank Simulation</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
